@@ -1,0 +1,98 @@
+base_link2os_sensor:
+  x: 0.03
+  y: -0.130
+  z: 1.646
+  roll: 0.0
+  pitch: 0.0
+  yaw: 3.1415926 
+base_link2gnss:
+  x: -0.37
+  y: 0.0
+  z: 0.18
+  roll: 0.0
+  pitch: 0.0
+  yaw: 0.0
+base_link2rsbp:
+  x: 0.786
+  y: -0.006
+  z: 0.582  
+  roll: 0.518
+  pitch: 1.351
+  yaw: 0.549
+base_link2rs16:
+  x: 0.200
+  y: 0.000
+  z: 1.300
+  roll: 0.0
+  pitch: 0.0523
+  yaw: 0.0
+base_link2zed:
+  x: 0.787
+  y: -0.031
+  z: 1.065
+  roll: 0.008
+  pitch: 0.292
+  yaw: 0.020
+base_link2ultrasonic_0:
+  x: 0.9
+  y: 0.25
+  z: 0.25
+  roll: 0.0
+  pitch: 0.0
+  yaw: 0.0
+base_link2ultrasonic_1:
+  x: 0.9
+  y: -0.25
+  z: 0.25
+  roll: 0.0
+  pitch: 0.0
+  yaw: 0.0
+base_link2ultrasonic_2:
+  x: 0.4
+  y: 0.55
+  z: 0.45
+  roll: 0.0
+  pitch: 0.0524
+  yaw: 1.5708
+base_link2ultrasonic_3:
+  x: 0.4
+  y: -0.55
+  z: 0.45
+  roll: 0.0
+  pitch: 0.0524
+  yaw: -1.5708
+base_link2ultrasonic_4:
+  x: -0.15
+  y: 0.55
+  z: 0.45
+  roll: 0.0
+  pitch: 0.0524
+  yaw: 1.5708
+base_link2ultrasonic_5:
+  x: -0.15
+  y: -0.55
+  z: 0.45
+  roll: 0.0
+  pitch: 0.0524
+  yaw: -1.5708
+base_link2ultrasonic_6:
+  x: -0.9
+  y: 0.25
+  z: 0.25
+  roll: 0.0
+  pitch: 0.0
+  yaw: 3.1416
+base_link2ultrasonic_7:
+  x: -0.9
+  y: -0.25
+  z: 0.25
+  roll: 0.0
+  pitch: 0.0
+  yaw: 3.1416
+rs162camera:
+  x: 0.5789871
+  y: -0.08247789
+  z: -0.3453706
+  roll: -0.7583791
+  pitch: 1.5534501
+  yaw: -0.80520433
