@@ -9,19 +9,64 @@
   
   <group>
     <push-ros-namespace namespace="lidar"/>
-    <!-- use ouster lidar -->
-    <!-- <group>
-      <push-ros-namespace namespace="top"/>
-      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_driver_launch.py" />
+    <!-- use front left ouster lidar -->
+    <group>
+      <push-ros-namespace namespace="front_left"/>
+      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_fl_launch.py" />
     </group>
-    <node pkg="topic_tools" exec="relay" name="lidar_relay" output="log">
-      <param name="input_topic" value="/sensing/lidar/top/ouster/points"/>
+    <node pkg="topic_tools" exec="relay" name="lidar_relay_fl" output="log">
+      <param name="input_topic" value="/sensing/lidar/front_left/ouster/front_left/points"/>
+      <param name="output_topic" value="/sensing/lidar/front_left/outlier_filtered/pointcloud"/>
+      <param name="type" value="sensor_msgs/msg/Pointcloud2"/>
+      <param name="reliability" value="best_effort"/>
+    </node>
+
+    <group>
+      <push-ros-namespace namespace="front_right"/>
+      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_fr_launch.py" />
+    </group>
+    <node pkg="topic_tools" exec="relay" name="lidar_relay_fr" output="log">
+      <param name="input_topic" value="/sensing/lidar/front_right/ouster/front_right/points"/>
+      <param name="output_topic" value="/sensing/lidar/front_right/outlier_filtered/pointcloud"/>
+      <param name="type" value="sensor_msgs/msg/Pointcloud2"/>
+      <param name="reliability" value="best_effort"/>
+    </node>
+
+    <group>
+      <push-ros-namespace namespace="rear_left"/>
+      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_rl_launch.py" />
+    </group>
+    <node pkg="topic_tools" exec="relay" name="lidar_relay_rl" output="log">
+      <param name="input_topic" value="/sensing/lidar/rear_left/ouster/rear_left/points"/>
+      <param name="output_topic" value="/sensing/lidar/rear_left/outlier_filtered/pointcloud"/>
+      <param name="type" value="sensor_msgs/msg/Pointcloud2"/>
+      <param name="reliability" value="best_effort"/>
+    </node>
+
+    <group>
+      <push-ros-namespace namespace="rear_right"/>
+      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_rr_launch.py" />
+    </group>
+    <node pkg="topic_tools" exec="relay" name="lidar_relay_rr" output="log">
+      <param name="input_topic" value="/sensing/lidar/rear_right/ouster/rear_right/points"/>
+      <param name="output_topic" value="/sensing/lidar/rear_right/outlier_filtered/pointcloud"/>
+      <param name="type" value="sensor_msgs/msg/Pointcloud2"/>
+      <param name="reliability" value="best_effort"/>
+    </node>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="static_transform_publisher_fl" args="1.0 2.0 3.0 0.0 0.0 0.0 os_sensor_top os_sensor_fl"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="static_transform_publisher_fr" args="1.0 2.0 3.0 0.0 0.0 0.0 os_sensor_top os_sensor_fr"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="static_transform_publisher_rl" args="1.0 2.0 3.0 0.0 0.0 0.0 os_sensor_top os_sensor_rl"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="static_transform_publisher_rr" args="1.0 2.0 3.0 0.0 0.0 0.0 os_sensor_top os_sensor_rr"/>
+    <node pkg="topic_tools" exec="relay" name="lidar_relay_top" output="log">
+      <param name="input_topic" value="/sensing/lidar/concatenated/pointcloud_unfilter"/>
       <param name="output_topic" value="/sensing/lidar/top/outlier_filtered/pointcloud"/>
       <param name="type" value="sensor_msgs/msg/Pointcloud2"/>
       <param name="reliability" value="best_effort"/>
-    </node> -->
+    </node>
+
     <!-- use rs lidar -->
-    <group>
+    <!-- <group>
       <push-ros-namespace namespace="top"/>
       <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/rslidar.py" />
     </group>
@@ -30,7 +75,7 @@
       <param name="output_topic" value="/sensing/lidar/top/outlier_filtered/pointcloud"/>
       <param name="type" value="sensor_msgs/msg/Pointcloud2"/>
       <param name="reliability" value="best_effort"/>
-    </node>
+    </node> -->
 
 
     <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/pointcloud_preprocessor.launch.py">

@@ -35,12 +35,13 @@ def generate_launch_description():
     share_dir = get_package_share_directory('ros2_ouster')
     param_dir = get_package_share_directory('robobus_sensor_kit_launch')
     parameter_file = LaunchConfiguration('params_file')
-    node_name = 'ouster_driver'
+    node_name = 'ouster_driver_rr'
+    config_name = 'ouster_rr_config.yaml'
 
     # Acquire the driver param file
     params_declare = DeclareLaunchArgument('params_file',
                                            default_value=os.path.join(
-                                               param_dir, 'config', 'ouster_driver_config.yaml'),
+                                               param_dir, 'config', config_name),
                                            description='FPath to the ROS2 parameters file to use.')
 
     driver_node = LifecycleNode(package='ros2_ouster',
@@ -49,6 +50,15 @@ def generate_launch_description():
                                 output='screen',
                                 emulate_tty=True,
                                 parameters=[parameter_file],
+
+                                remappings=[('scan', 'rear_right/scan')],
+                                remappings=[('range_image', 'rear_right/range_image')],
+                                remappings=[('intensity_image', 'rear_right/intensity_image')],
+                                remappings=[('noise_image', 'rear_right/noise_image')],
+                                remappings=[('reflectivity_image', 'rear_right/reflectivity_image')],
+                                remappings=[('points', 'rear_right/points')],
+                                remappings=[('imu', 'rear_right/imu')],
+
                                 arguments=['--ros-args', '--log-level', 'INFO'],
                                 namespace='ouster',
                                 )
