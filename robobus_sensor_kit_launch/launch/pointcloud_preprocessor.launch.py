@@ -35,10 +35,10 @@ def launch_setup(context, *args, **kwargs):
         parameters=[
             {
                 "input_topics": [
-                    "/sensing/lidar/front_left/outlier_filtered/pointcloud",
-                    "/sensing/lidar/front_right/outlier_filtered/pointcloud",
-                    "/sensing/lidar/rear_left/outlier_filtered/pointcloud",
-                    "/sensing/lidar/rear_right/outlier_filtered/pointcloud",
+                    "/sensing/lidar/front_left/ouster/points",
+                    "/sensing/lidar/rear_left/ouster/points",
+                    "/sensing/lidar/front_right/ouster/points",
+                    "/sensing/lidar/rear_right/ouster/points",
                 ],
                 "output_frame": LaunchConfiguration("base_frame"),
             }
@@ -58,10 +58,10 @@ def launch_setup(context, *args, **kwargs):
             {
                 "input_frame": LaunchConfiguration("base_frame"),
                 "output_frame": LaunchConfiguration("base_frame"),
-                "min_x": -1.0,
-                "max_x": 1.0,
-                "min_y": -0.5,
-                "max_y": 0.5,
+                "min_x": -1.7,
+                "max_x": 1.7,
+                "min_y": -1.0,
+                "max_y": 1.0,
                 "min_z": -0.5,
                 "max_z": 1.8,
                 "negative": True,
