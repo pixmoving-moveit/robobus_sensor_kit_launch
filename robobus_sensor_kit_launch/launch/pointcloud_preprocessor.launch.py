@@ -52,19 +52,41 @@ def launch_setup(context, *args, **kwargs):
         name="crop_box_filter",
         remappings=[
             ("input", "concatenated/pointcloud_unfilter"),
+            ("output", "concatenated/pointcloud_1"),
+        ],
+        parameters=[
+            {
+                "input_frame": LaunchConfiguration("base_frame"),
+                "output_frame": LaunchConfiguration("base_frame"),
+                "min_x": -1.9,
+                "max_x": 1.9,
+                "min_y": -1.2,
+                "max_y": 1.1,
+                "min_z": -0.5,
+                "max_z": 2.5,
+                "negative": True,
+            }
+        ],
+    )
+    cropbox_component_1 = ComposableNode(
+        package="pointcloud_preprocessor",
+        plugin="pointcloud_preprocessor::CropBoxFilterComponent",
+        name="crop_box_filter_1",
+        remappings=[
+            ("input", "concatenated/pointcloud_1"),
             ("output", "concatenated/pointcloud"),
         ],
         parameters=[
             {
                 "input_frame": LaunchConfiguration("base_frame"),
                 "output_frame": LaunchConfiguration("base_frame"),
-                "min_x": -1.7,
-                "max_x": 1.7,
-                "min_y": -1.0,
-                "max_y": 1.0,
-                "min_z": -0.5,
-                "max_z": 1.8,
-                "negative": True,
+                "min_x": -100.0,
+                "max_x": 100.0,
+                "min_y": -50.0,
+                "max_y": 50.0,
+                "min_z": -0.4,
+                "max_z": 3.0,
+                "negative": False,
             }
         ],
     )
@@ -87,7 +109,7 @@ def launch_setup(context, *args, **kwargs):
 
     # load concat or passthrough filter
     concat_loader = LoadComposableNodes(
-        composable_node_descriptions=[concat_component, cropbox_component],
+        composable_node_descriptions=[concat_component, cropbox_component, cropbox_component_1],
         target_container=target_container,
         condition=IfCondition(LaunchConfiguration("use_concat_filter")),
     )
@@ -104,7 +126,7 @@ def generate_launch_description():
     add_launch_arg("base_frame", "base_link")
     add_launch_arg("use_multithread", "False")
     add_launch_arg("use_intra_process", "False")
-    add_launch_arg("use_pointcloud_container", "False")
+    add_launch_arg("use_pointcloud_container", "True")
     add_launch_arg("container_name", "pointcloud_preprocessor_container")
 
     set_container_executable = SetLaunchConfiguration(

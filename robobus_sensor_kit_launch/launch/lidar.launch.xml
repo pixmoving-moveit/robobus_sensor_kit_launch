@@ -12,22 +12,22 @@
     <!-- use front left ouster lidar -->
     <group>
       <push-ros-namespace namespace="front_left"/>
-      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_fl.composite.launch.py" />
+      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_fl.composite.launch.py" if="$(var launch_driver)"/>
     </group>
 
     <group>
       <push-ros-namespace namespace="front_right"/>
-      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_fr.composite.launch.py" />
+      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_fr.composite.launch.py" if="$(var launch_driver)"/>
     </group>
 
     <group>
       <push-ros-namespace namespace="rear_left"/>
-      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_rl.composite.launch.py" />
+      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_rl.composite.launch.py" if="$(var launch_driver)"/>
     </group>
 
     <group>
       <push-ros-namespace namespace="rear_right"/>
-      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch//ouster_rr.composite.launch.py" />
+      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch//ouster_rr.composite.launch.py" if="$(var launch_driver)"/>
     </group>
 
     <node pkg="topic_tools" exec="relay" name="lidar_relay_top" output="log">
