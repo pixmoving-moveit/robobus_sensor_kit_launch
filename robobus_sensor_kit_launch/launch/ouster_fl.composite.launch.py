@@ -90,7 +90,7 @@ def generate_launch_description():
                   '/', node_name, ' ', verb]],
             shell=True)
 
-    sensor_configure_cmd = invoke_lifecycle_cmd('sensing/idar/front_left/ouster/os_sensor', 'configure')
+    sensor_configure_cmd = invoke_lifecycle_cmd('sensing/lidar/front_left/ouster/os_sensor', 'configure')
     sensor_activate_cmd = invoke_lifecycle_cmd('sensing/lidar/front_left/ouster/os_sensor', 'activate')
     # sensor_configure_cmd = invoke_lifecycle_cmd('os_sensor', 'configure')
     # sensor_activate_cmd = invoke_lifecycle_cmd('os_sensor', 'activate')
