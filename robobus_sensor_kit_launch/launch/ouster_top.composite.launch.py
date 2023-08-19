@@ -22,7 +22,7 @@ def generate_launch_description():
     """
     ouster_ros_pkg_dir = get_package_share_directory('robobus_sensor_kit_launch')
     default_params_file = \
-        Path(ouster_ros_pkg_dir) / 'config' / 'os_fl_config.yaml'
+        Path(ouster_ros_pkg_dir) / 'config' / 'os_top_config.yaml'
     params_file = LaunchConfiguration('params_file')
     params_file_arg = DeclareLaunchArgument('params_file',
                                             default_value=str(
@@ -90,8 +90,8 @@ def generate_launch_description():
                   '/', node_name, ' ', verb]],
             shell=True)
 
-    sensor_configure_cmd = invoke_lifecycle_cmd('sensing/lidar/front_left/ouster/os_sensor', 'configure')
-    sensor_activate_cmd = invoke_lifecycle_cmd('sensing/lidar/front_left/ouster/os_sensor', 'activate')
+    sensor_configure_cmd = invoke_lifecycle_cmd('sensing/lidar/top/ouster/os_sensor', 'configure')
+    sensor_activate_cmd = invoke_lifecycle_cmd('sensing/lidar/top/ouster/os_sensor', 'activate')
     # sensor_configure_cmd = invoke_lifecycle_cmd('os_sensor', 'configure')
     # sensor_activate_cmd = invoke_lifecycle_cmd('os_sensor', 'activate')
 

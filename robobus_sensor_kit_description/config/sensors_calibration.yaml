@@ -1,126 +1,66 @@
-base_link2rsbp:
-  x: 0.786
-  y: -0.006
-  z: 0.582  
-  roll: 0.518
-  pitch: 1.351
-  yaw: 0.549
-base_link2rs16:
-  x: 0.03
-  y: -0.130
-  z: 1.646
-  roll: 0.0
-  pitch: 0.0
-  yaw: 0.0
-base_link2zed:
-  x: 0.787
-  y: -0.031
-  z: 1.065
-  roll: 0.008
-  pitch: 0.292
-  yaw: 0.020
-base_link2ultrasonic_0:
-  x: 0.9
-  y: 0.25
-  z: 0.25
-  roll: 0.0
-  pitch: 0.0
-  yaw: 0.0
-base_link2ultrasonic_1:
-  x: 0.9
-  y: -0.25
-  z: 0.25
-  roll: 0.0
-  pitch: 0.0
-  yaw: 0.0
-base_link2ultrasonic_2:
-  x: 0.4
-  y: 0.55
-  z: 0.45
-  roll: 0.0
-  pitch: 0.0524
-  yaw: 1.5708
-base_link2ultrasonic_3:
-  x: 0.4
-  y: -0.55
-  z: 0.45
-  roll: 0.0
-  pitch: 0.0524
-  yaw: -1.5708
-base_link2ultrasonic_4:
-  x: -0.15
-  y: 0.55
-  z: 0.45
-  roll: 0.0
-  pitch: 0.0524
-  yaw: 1.5708
-base_link2ultrasonic_5:
-  x: -0.15
-  y: -0.55
-  z: 0.45
-  roll: 0.0
-  pitch: 0.0524
-  yaw: -1.5708
-base_link2ultrasonic_6:
-  x: -0.9
-  y: 0.25
-  z: 0.25
-  roll: 0.0
-  pitch: 0.0
-  yaw: 3.1416
-base_link2ultrasonic_7:
-  x: -0.9
-  y: -0.25
-  z: 0.25
-  roll: 0.0
-  pitch: 0.0
-  yaw: 3.1416
-
-# robobus -- muti lidar
-os_sensor_top2os_sensor_fl:
-  x: 1.27476
-  y: 0.904711
-  z: -0.524352
-  roll: -0.0166414
-  pitch: 0.179825
-  yaw: 1.19581
-os_sensor_top2os_sensor_fr:
-  x: 1.19551
-  y: -0.953678
-  z: -0.542749
-  roll: -3.07173
-  pitch: 2.94327
-  yaw:  2.03266
-os_sensor_top2os_sensor_rl:
-  x: -1.10073
-  y: 0.907117
-  z: -0.52023
-  roll: -0.0193096
-  pitch: 0.168289
-  yaw: 1.92758
-os_sensor_top2os_sensor_rr:
-  x: -1.13432
-  y: -0.969587
-  z: -0.556525
-  roll: 3.08264
-  pitch: 2.90432
-  yaw: 1.18529
-base_link2os_sensor_top:
-  x: 0.00
-  y: -0.100
-  z: 2.0
-
-os_sensor_top2camera:
-  x: 0.5789871
-  y: -0.08247789
-  z: -0.3453706
-  roll: -1.55877693
-  pitch: 0.00713767
-  yaw: -1.55820481
-base_link2gnss:
-  x: -0.37
-  y: 0.0
-  z: 0.18
-  roll: 0.0
-  pitch: 0.0
-  yaw: 0.0
+base_link:
+# Equivalent to top LIDAR coordinate system
+  sensor_kit_base_link:
+    x: 0.0
+    y: 0.0
+    z: 2.0
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+# ultrasonic radar
+  ultrasonic_0:
+    x: 0.9
+    y: 0.25
+    z: 0.25
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  ultrasonic_1:
+    x: 0.9
+    y: -0.25
+    z: 0.25
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  ultrasonic_2:
+    x: 0.4
+    y: 0.55
+    z: 0.45
+    roll: 0.0
+    pitch: 0.0524
+    yaw: 1.5708
+  ultrasonic_3:
+    x: 0.4
+    y: -0.55
+    z: 0.45
+    roll: 0.0
+    pitch: 0.0524
+    yaw: -1.5708
+  ultrasonic_4:
+    x: -0.15
+    y: 0.55
+    z: 0.45
+    roll: 0.0
+    pitch: 0.0524
+    yaw: 1.5708
+  ultrasonic_5:
+    x: -0.15
+    y: -0.55
+    z: 0.45
+    roll: 0.0
+    pitch: 0.0524
+    yaw: -1.5708
+  ultrasonic_6:
+    x: -0.9
+    y: 0.25
+    z: 0.25
+    roll: 0.0
+    pitch: 0.0
+    yaw: 3.1416
+  ultrasonic_7:
+    x: -0.9
+    y: -0.25
+    z: 0.25
+    roll: 0.0
+    pitch: 0.0
+    yaw: 3.1416

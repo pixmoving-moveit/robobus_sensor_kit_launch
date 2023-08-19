@@ -11,6 +11,11 @@
     <push-ros-namespace namespace="lidar"/>
     <!-- use front left ouster lidar -->
     <group>
+      <push-ros-namespace namespace="top"/>
+      <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_top.composite.launch.py" if="$(var launch_driver)"/>
+    </group>
+
+    <group>
       <push-ros-namespace namespace="front_left"/>
       <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/ouster_fl.composite.launch.py" if="$(var launch_driver)"/>
     </group>

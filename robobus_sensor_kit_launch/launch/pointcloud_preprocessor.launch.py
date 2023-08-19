@@ -26,6 +26,122 @@ from launch_ros.descriptions import ComposableNode
 
 
 def launch_setup(context, *args, **kwargs):
+    # set scan ground filter as a component
+    ground_segmentation_1 = ComposableNode(
+        package="ground_segmentation",
+        plugin="ground_segmentation::ScanGroundFilterComponent",
+        name="ground_segmentation_1",
+        remappings=[
+                    ("input", "/sensing/lidar/front_left/ouster/points"),
+                    ("output", "/sensing/lidar/front_left/ouster/points_no_ground"),
+                ],
+        parameters=[
+                    {
+                        "global_slope_max_angle_deg": 10.0,
+                        "local_slope_max_angle_deg": 13.0, # recommended 30.0 for non elevation_grid_mode
+                        "split_points_distance_tolerance": 0.2,
+                        "use_virtual_ground_point": True,
+                        "split_height_distance": 0.2,
+                        "non_ground_height_threshold": 0.20,
+                        "grid_size_m": 0.1,
+                        "grid_mode_switch_radius": 20.0,
+                        "gnd_grid_buffer_size": 4,
+                        "detection_range_z_max": 2.5,
+                        "elevation_grid_mode": True,
+                        "use_recheck_ground_cluster": True,
+                    }
+                ],
+        extra_arguments=[
+            {"use_intra_process_comms": LaunchConfiguration("use_intra_process")}
+        ],
+    )
+    # set scan ground filter as a component
+    ground_segmentation_2 = ComposableNode(
+        package="ground_segmentation",
+        plugin="ground_segmentation::ScanGroundFilterComponent",
+        name="ground_segmentation_2",
+        remappings=[
+                    ("input", "/sensing/lidar/front_right/ouster/points"),
+                    ("output", "/sensing/lidar/front_right/ouster/points_no_ground"),
+                ],
+        parameters=[
+                    {
+                        "global_slope_max_angle_deg": 10.0,
+                        "local_slope_max_angle_deg": 13.0, # recommended 30.0 for non elevation_grid_mode
+                        "split_points_distance_tolerance": 0.2,
+                        "use_virtual_ground_point": True,
+                        "split_height_distance": 0.2,
+                        "non_ground_height_threshold": 0.20,
+                        "grid_size_m": 0.1,
+                        "grid_mode_switch_radius": 20.0,
+                        "gnd_grid_buffer_size": 4,
+                        "detection_range_z_max": 2.5,
+                        "elevation_grid_mode": True,
+                        "use_recheck_ground_cluster": True,
+                    }
+                ],
+        extra_arguments=[
+            {"use_intra_process_comms": LaunchConfiguration("use_intra_process")}
+        ],
+    )
+    # set scan ground filter as a component
+    ground_segmentation_3 = ComposableNode(
+        package="ground_segmentation",
+        plugin="ground_segmentation::ScanGroundFilterComponent",
+        name="ground_segmentation_3",
+        remappings=[
+                    ("input", "/sensing/lidar/rear_left/ouster/points"),
+                    ("output", "/sensing/lidar/rear_left/ouster/points_no_ground"),
+                ],
+        parameters=[
+                    {
+                        "global_slope_max_angle_deg": 10.0,
+                        "local_slope_max_angle_deg": 13.0, # recommended 30.0 for non elevation_grid_mode
+                        "split_points_distance_tolerance": 0.2,
+                        "use_virtual_ground_point": True,
+                        "split_height_distance": 0.2,
+                        "non_ground_height_threshold": 0.20,
+                        "grid_size_m": 0.1,
+                        "grid_mode_switch_radius": 20.0,
+                        "gnd_grid_buffer_size": 4,
+                        "detection_range_z_max": 2.5,
+                        "elevation_grid_mode": True,
+                        "use_recheck_ground_cluster": True,
+                    }
+                ],
+        extra_arguments=[
+            {"use_intra_process_comms": LaunchConfiguration("use_intra_process")}
+        ],
+    )
+    # set scan ground filter as a component
+    ground_segmentation_4 = ComposableNode(
+        package="ground_segmentation",
+        plugin="ground_segmentation::ScanGroundFilterComponent",
+        name="ground_segmentation_4",
+        remappings=[
+                    ("input", "/sensing/lidar/rear_right/ouster/points"),
+                    ("output", "/sensing/lidar/rear_right/ouster/points_no_ground"),
+                ],
+        parameters=[
+                    {
+                        "global_slope_max_angle_deg": 10.0,
+                        "local_slope_max_angle_deg": 13.0, # recommended 30.0 for non elevation_grid_mode
+                        "split_points_distance_tolerance": 0.2,
+                        "use_virtual_ground_point": True,
+                        "split_height_distance": 0.2,
+                        "non_ground_height_threshold": 0.20,
+                        "grid_size_m": 0.1,
+                        "grid_mode_switch_radius": 20.0,
+                        "gnd_grid_buffer_size": 4,
+                        "detection_range_z_max": 2.5,
+                        "elevation_grid_mode": True,
+                        "use_recheck_ground_cluster": True,
+                    }
+                ],
+        extra_arguments=[
+            {"use_intra_process_comms": LaunchConfiguration("use_intra_process")}
+        ],
+    )
     # set concat filter as a component
     concat_component = ComposableNode(
         package="pointcloud_preprocessor",
@@ -35,10 +151,10 @@ def launch_setup(context, *args, **kwargs):
         parameters=[
             {
                 "input_topics": [
-                    "/sensing/lidar/front_left/ouster/points",
-                    "/sensing/lidar/rear_left/ouster/points",
-                    "/sensing/lidar/front_right/ouster/points",
-                    "/sensing/lidar/rear_right/ouster/points",
+                    "/sensing/lidar/front_left/ouster/points_no_ground",
+                    "/sensing/lidar/rear_left/ouster/points_no_ground",
+                    "/sensing/lidar/front_right/ouster/points_no_ground",
+                    "/sensing/lidar/rear_right/ouster/points_no_ground",
                 ],
                 "output_frame": LaunchConfiguration("base_frame"),
             }
@@ -58,10 +174,10 @@ def launch_setup(context, *args, **kwargs):
             {
                 "input_frame": LaunchConfiguration("base_frame"),
                 "output_frame": LaunchConfiguration("base_frame"),
-                "min_x": -1.9,
-                "max_x": 1.9,
+                "min_x": -2.05,
+                "max_x": 2.05,
                 "min_y": -1.2,
-                "max_y": 1.1,
+                "max_y": 1.2,
                 "min_z": -0.5,
                 "max_z": 2.5,
                 "negative": True,
@@ -109,7 +225,8 @@ def launch_setup(context, *args, **kwargs):
 
     # load concat or passthrough filter
     concat_loader = LoadComposableNodes(
-        composable_node_descriptions=[concat_component, cropbox_component, cropbox_component_1],
+        # composable_node_descriptions=[concat_component, cropbox_component, cropbox_component_1],
+        composable_node_descriptions=[ground_segmentation_1, ground_segmentation_2, ground_segmentation_3, ground_segmentation_4, concat_component, cropbox_component, cropbox_component_1],
         target_container=target_container,
         condition=IfCondition(LaunchConfiguration("use_concat_filter")),
     )
