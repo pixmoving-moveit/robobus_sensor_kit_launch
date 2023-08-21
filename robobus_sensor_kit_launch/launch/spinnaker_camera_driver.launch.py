@@ -49,7 +49,7 @@ example_parameters = {
         'trigger_mode': 'Off',
         'chunk_mode_active': True,
         'chunk_selector_frame_id': 'FrameID',
-        'chunk_enable_frame_id': True,
+        'chunk_enable_frame_id': False,
         'chunk_selector_exposure_time': 'ExposureTime',
         'chunk_enable_exposure_time': True,
         'chunk_selector_gain': 'Gain',
@@ -106,22 +106,24 @@ def launch_setup(context, *args, **kwargs):
     """Launch camera driver node."""
     # parameter_file = LaunchConfig('parameter_file').perform(context)
     # camera_type = LaunchConfig('camera_type').perform(context)
+    serial_number = "22495519"
     camera_type = 'blackfly_s'
     parameter_file = PathJoinSubstitution(
         [FindPackageShare('robobus_sensor_kit_launch'), 'config',
             camera_type + '.yaml'])
     
-    camerainfo_url = PathJoinSubstitution(
-        [FindPackageShare('robobus_sensor_kit_launch'), 'data','camera_info.yaml'])
+    camerainfo_url = 'package://robobus_sensor_kit_launch/data/camera_info.yaml'
     
     node = Node(package='spinnaker_camera_driver',
                 executable='camera_driver_node',
                 output='screen',
-                name=[LaunchConfig('camera_name')],
+                name="flir_camera",
                 parameters=[example_parameters[camera_type],
                             {'parameter_file': parameter_file,
-                             'serial_number': [LaunchConfig('serial')],
-                             'camerainfo_url': camerainfo_url}
+                             'frame_id': 'traffic_light_left_camera',
+                             'serial_number': serial_number,
+                             'camerainfo_url': camerainfo_url
+                             }
                             ],
                 remappings=[('~/control', '/exposure_control/control'), ])
 
@@ -131,13 +133,13 @@ def launch_setup(context, *args, **kwargs):
 def generate_launch_description():
     """Create composable node by calling opaque function."""
     return LaunchDescription([
-        LaunchArg('camera_name', default_value=['flir_camera'],
-                  description='camera name (ros node name)'),
+        # LaunchArg('camera_name', default_value=['flir_camera'],
+        #           description='camera name (ros node name)'),
         LaunchArg('camera_type', default_value='blackfly_s',
                   description='type of camera (blackfly_s, chameleon...)'),
         LaunchArg('serial', default_value="'20435008'",
                   description='FLIR serial number of camera (in quotes!!)'),
-        LaunchArg('parameter_file', default_value='',
+        LaunchArg('parameter_file', default_value='22495519',
                   description='path to ros parameter definition file (override camera type)'),
         OpaqueFunction(function=launch_setup)
         ])

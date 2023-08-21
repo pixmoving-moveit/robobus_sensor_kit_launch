@@ -23,6 +23,7 @@
     <link name="zed" />
     <link name="gnss" />
     <link name="os_sensor_top" />
+    <link name="os_sensor_ancillary" />
     <link name="os_sensor_fl" />
     <link name="os_sensor_fr" />
     <link name="os_sensor_rl" />
@@ -43,6 +44,18 @@
              ${calibration['sensor_kit_base_link']['os_sensor_top']['yaw']}" />
     </joint>
 
+    <joint name="os_sensor_ancillary_joint" type="fixed">
+      <parent link="sensor_kit_base_link" />
+      <child link="os_sensor_ancillary" />
+      <origin 
+        xyz="${calibration['sensor_kit_base_link']['os_sensor_ancillary']['x']} 
+             ${calibration['sensor_kit_base_link']['os_sensor_ancillary']['y']} 
+             ${calibration['sensor_kit_base_link']['os_sensor_ancillary']['z']}" 
+        rpy="${calibration['sensor_kit_base_link']['os_sensor_ancillary']['roll']} 
+             ${calibration['sensor_kit_base_link']['os_sensor_ancillary']['pitch']} 
+             ${calibration['sensor_kit_base_link']['os_sensor_ancillary']['yaw']}" />
+    </joint>
+    
     <joint name="os_sensor_fl_joint" type="fixed">
       <parent link="sensor_kit_base_link" />
       <child link="os_sensor_fl" />

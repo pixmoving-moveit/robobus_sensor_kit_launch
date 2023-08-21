@@ -1,7 +1,6 @@
-sensing/lidar/front_left/ouster/os_sensor:
-# ouster/os_sensor:
+sensing/lidar/ancillary/ouster/os_sensor:
   ros__parameters:
-    sensor_hostname: '192.168.5.120'
+    sensor_hostname: '192.168.1.121'
     udp_dest: ''
     mtp_dest: ''
     mtp_main: false
@@ -11,10 +10,9 @@ sensing/lidar/front_left/ouster/os_sensor:
     metadata: ''
     lidar_port: 0
     imu_port: 0
-sensing/lidar/front_left/ouster/os_cloud:
-# ouster/os_cloud:
+sensing/lidar/ancillary/ouster/os_cloud:
   ros__parameters:
-    sensor_frame: 'os_sensor_fl'
-    lidar_frame: 'os_lidar_fl'
-    imu_frame: 'os_imu_fl'
+    sensor_frame: 'os_sensor_ancillary'
+    lidar_frame: 'os_lidar_ancillary'
+    imu_frame: 'os_imu_ancillary'
     timestamp_mode: 'TIME_FROM_ROS_TIME'
