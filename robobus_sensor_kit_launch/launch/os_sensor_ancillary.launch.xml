@@ -1,8 +1,8 @@
 <launch>
 
-  <arg name="ouster_ns_rl" default="/sensing/lidar/rear_left/ouster"
+  <arg name="ouster_ns_ancillary" default="/sensing/lidar/ancillary/ouster"
     description="Override the default namespace of all ouster nodes"/>
-  <arg name="sensor_hostname_rl" default="192.168.1.123"
+  <arg name="sensor_hostname_ancillary" default="192.168.1.125"
     description="hostname or IP in dotted decimal form of the sensor"/>
   <arg name="udp_dest" default=""
     description="hostname or IP where the sensor will send data packets"/>
@@ -62,9 +62,9 @@
     and choose a value the range [0, sensor_beams_count)"/>
 
   <group>
-    <push-ros-namespace namespace="$(var ouster_ns_rl)"/>
+    <push-ros-namespace namespace="$(var ouster_ns_ancillary)"/>
     <node pkg="ouster_ros" exec="os_driver" name="os_driver" output="screen">
-      <param name="sensor_hostname" value="$(var sensor_hostname_rl)"/>
+      <param name="sensor_hostname" value="$(var sensor_hostname_ancillary)"/>
       <param name="udp_dest" value="$(var udp_dest)"/>
       <param name="mtp_dest" value=""/>
       <param name="mtp_main" value="false"/>
@@ -73,9 +73,9 @@
       <param name="udp_profile_lidar" value="$(var udp_profile_lidar)"/>
       <param name="lidar_mode" value="$(var lidar_mode)"/>
       <param name="metadata" value="$(var metadata)"/>
-      <param name="sensor_frame" value="os_sensor_rl"/>
-      <param name="lidar_frame" value="os_lidar_rl"/>
-      <param name="imu_frame" value="os_imu_rl"/>
+      <param name="sensor_frame" value="os_sensor_ancillary"/>
+      <param name="lidar_frame" value="os_lidar_ancillary"/>
+      <param name="imu_frame" value="os_imu_ancillary"/>
       <param name="point_cloud_frame" value="$(var point_cloud_frame)"/>
       <param name="timestamp_mode" value="$(var timestamp_mode)"/>
       <param name="use_system_default_qos" value="$(var use_system_default_qos)"/>
@@ -86,13 +86,13 @@
 
   <!-- HACK: configure and activate the sensor node via a process execute since state
     transition is currently not availabe through launch.xml format -->
-  <executable cmd="$(find-exec ros2) lifecycle set $(var ouster_ns_rl)/os_driver configure"
+  <executable cmd="$(find-exec ros2) lifecycle set $(var ouster_ns_ancillary)/os_driver configure"
     launch-prefix="bash -c 'sleep 0; $0 $@'" output="screen"/>
-  <executable cmd="$(find-exec ros2) lifecycle set $(var ouster_ns_rl)/os_driver activate"
+  <executable cmd="$(find-exec ros2) lifecycle set $(var ouster_ns_ancillary)/os_driver activate"
     launch-prefix="bash -c 'sleep 1; $0 $@'" output="screen"/>
 
   <include if="$(var viz)" file="$(find-pkg-share ouster_ros)/launch/rviz.launch.xml">
-    <arg name="ouster_ns_rl" value="$(var ouster_ns_rl)"/>
+    <arg name="ouster_ns_ancillary" value="$(var ouster_ns_ancillary)"/>
     <arg name="rviz_config" value="$(var rviz_config)"/>
   </include>
 

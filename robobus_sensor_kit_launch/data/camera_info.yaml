@@ -4,14 +4,14 @@ camera_name: trafficlight
 camera_matrix:
   rows: 3
   cols: 3
-  data: [3479.00985,    0.     ,  741.54149,
-            0.     , 3474.47328,  546.32356,
+  data: [3478.49833,    0.     ,  748.18684,
+            0.     , 3477.81767,  548.41885,
             0.     ,    0.     ,    1.     ]
 distortion_model: plumb_bob
 distortion_coefficients:
   rows: 1
   cols: 5
-  data: [-0.040480, 0.587582, 0.000129, 0.000412, 0.000000]
+  data: [-0.014311, 0.410205, -0.000385, 0.000756, 0.000000]
 rectification_matrix:
   rows: 3
   cols: 3
@@ -21,6 +21,6 @@ rectification_matrix:
 projection_matrix:
   rows: 3
   cols: 4
-  data: [3476.37207,    0.     ,  741.1745 ,    0.     ,
-            0.     , 3471.24365,  545.85716,    0.     ,
+  data: [3479.5686 ,    0.     ,  747.96862,    0.     ,
+            0.     , 3478.25317,  547.74702,    0.     ,
             0.     ,    0.     ,    1.     ,    0.     ]

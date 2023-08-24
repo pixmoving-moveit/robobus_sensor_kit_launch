@@ -7,6 +7,14 @@ sensor_kit_base_link:
     roll: -1.624
     pitch: 0.051 
     yaw: -1.486
+  camera1:
+    x: 1.118
+    y: -0.045
+    z: -0.169
+    roll: -1.624
+    pitch: 0.051 
+    yaw: -1.486
+  
   zed:
     x: 0.787
     y: -0.031
@@ -25,13 +33,14 @@ sensor_kit_base_link:
 
 # lidar
   # The laser coordinate system is the y-axis toward the front of the car.
+  # robobus -- muti lidar
   os_sensor_top:
-    x: 0.0
-    y: 0.0
-    z: 0.0
+    x: 0.00
+    y: -0.000
+    z: 1.8
     roll: 0.0
     pitch: 0.0
-    yaw: 0.0
+    yaw: 3.10
   os_sensor_ancillary:
     x: 5.645 
     y: 0.411
@@ -41,33 +50,33 @@ sensor_kit_base_link:
     yaw: 0.050
   # robobus -- muti lidar
   os_sensor_fl:
-    x: 1.829
-    y: 1.104
-    z: -0.419
-    roll: -0.029
-    pitch: 0.012
-    yaw: 0.086
+    x: 1.16941
+    y: 1.0914 
+    z: -0.44231 
+    roll: -0.0231962 
+    pitch: 0.268778
+    yaw: 1.24752 
   os_sensor_fr:
-    x: 1.963
-    y: -0.822
-    z: -0.513
-    roll: -3.130
-    pitch: 0.021
-    yaw: 0.105
+    x: 1.29626
+    y: -0.921884
+    z: -0.415867
+    roll: -3.13429
+    pitch: 2.87074
+    yaw:  1.97643
   os_sensor_rl:
-    x: -1.886
-    y: 0.763
-    z: -0.463
-    roll: -3.124
-    pitch: 0.010
-    yaw: -3.040
+    x: -1.22306
+    y: 0.945165
+    z: -0.452872  
+    roll: 0.0316878
+    pitch: 0.26885 
+    yaw: 1.98253
   os_sensor_rr:
-    x: -1.775
-    y: -1.044
-    z: -0.428
-    roll: 0.029
-    pitch: 0.020
-    yaw: -3.123
+    x: -1.10474
+    y: -0.966971
+    z: -0.452921
+    roll: 3.11137
+    pitch: 2.88721
+    yaw: 1.24932
 
 # millimeter wave
   front_radar:

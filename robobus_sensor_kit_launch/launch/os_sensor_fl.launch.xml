@@ -2,7 +2,7 @@
 
   <arg name="ouster_ns" default="/sensing/lidar/front_left/ouster"
     description="Override the default namespace of all ouster nodes"/>
-  <arg name="sensor_hostname" default="192.168.5.120"
+  <arg name="sensor_hostname" default="192.168.1.120"
     description="hostname or IP in dotted decimal form of the sensor"/>
   <arg name="udp_dest" default=""
     description="hostname or IP where the sensor will send data packets"/>
