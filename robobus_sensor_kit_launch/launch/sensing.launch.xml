@@ -37,7 +37,7 @@
       <push-ros-namespace namespace="camera"/>
       <group>
         <push-ros-namespace namespace="traffic_light"/>
-        <!-- <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera_launch.py" /> -->
+        <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera_launch.py" />
         <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/spinnaker_camera_driver.launch.py" />
       </group>
     </group>

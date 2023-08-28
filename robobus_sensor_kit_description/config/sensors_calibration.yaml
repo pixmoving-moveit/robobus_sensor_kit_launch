@@ -1,66 +1,55 @@
-base_link:
-# Equivalent to top LIDAR coordinate system
-  sensor_kit_base_link:
-    x: 0.0
+rs16:
+# camera
+  traffic_light_left_camera:
+    x: 0.708
+    y: 1.053
+    z: 1.479
+    roll: -1.553
+    pitch: 0.063
+    yaw: -1.584
+  camera1:
+    x: 0.784 
+    y: 1.109
+    z: 1.450
+    roll: -1.549
+    pitch: 0.063
+    yaw: -1.592
+
+# lidar
+# robobus -- muti lidar
+  os_lidar_fl:
+    x: 1.178
+    y: 0.910
+    z: -0.335
+    roll: 0.033 
+    pitch: -0.283
+    yaw: -1.934 
+  os_lidar_fr:
+    x: 1.167
+    y: -0.980
+    z: -0.341
+    roll: -0.008
+    pitch: -0.278
+    yaw:  1.941
+  os_lidar_rl:
+    x: -1.160
+    y: 0.899
+    z: -0.344  
+    roll: -0.022
+    pitch:  -0.280
+    yaw: -1.205
+  os_lidar_rr:
+    x: -1.162
+    y: -0.977
+    z: -0.344
+    roll: 0.025
+    pitch: -0.267
+    yaw: 1.208
+# combined navigation
+  gnss:
+    x: -0.37
     y: 0.0
-    z: 2.0
+    z: 0.18
     roll: 0.0
     pitch: 0.0
     yaw: 0.0
-# ultrasonic radar
-  ultrasonic_0:
-    x: 0.9
-    y: 0.25
-    z: 0.25
-    roll: 0.0
-    pitch: 0.0
-    yaw: 0.0
-  ultrasonic_1:
-    x: 0.9
-    y: -0.25
-    z: 0.25
-    roll: 0.0
-    pitch: 0.0
-    yaw: 0.0
-  ultrasonic_2:
-    x: 0.4
-    y: 0.55
-    z: 0.45
-    roll: 0.0
-    pitch: 0.0524
-    yaw: 1.5708
-  ultrasonic_3:
-    x: 0.4
-    y: -0.55
-    z: 0.45
-    roll: 0.0
-    pitch: 0.0524
-    yaw: -1.5708
-  ultrasonic_4:
-    x: -0.15
-    y: 0.55
-    z: 0.45
-    roll: 0.0
-    pitch: 0.0524
-    yaw: 1.5708
-  ultrasonic_5:
-    x: -0.15
-    y: -0.55
-    z: 0.45
-    roll: 0.0
-    pitch: 0.0524
-    yaw: -1.5708
-  ultrasonic_6:
-    x: -0.9
-    y: 0.25
-    z: 0.25
-    roll: 0.0
-    pitch: 0.0
-    yaw: 3.1416
-  ultrasonic_7:
-    x: -0.9
-    y: -0.25
-    z: 0.25
-    roll: 0.0
-    pitch: 0.0
-    yaw: 3.1416

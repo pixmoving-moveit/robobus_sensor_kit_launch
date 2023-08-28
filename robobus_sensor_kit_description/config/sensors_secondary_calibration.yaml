@@ -1,0 +1,118 @@
+base_link:
+  # lidar
+  rs16:
+    x: 0.00
+    y: -0.000
+    z: 1.8
+    roll: 0.0
+    pitch: 0.0
+    yaw: 3.10
+  os_lidar_ancillary:
+    x: 4.161 
+    y: 0.177
+    z: 0.895
+    roll: 0.003
+    pitch: 0.004
+    yaw: 0.001
+  # millimeter wave
+  front_radar:
+    x: 1.2
+    y: 0.0
+    z: 0.0
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  rear_radar:
+    x: -1.2
+    y: 0.0
+    z: 0.0
+    roll: 0.0
+    pitch: 0.0
+    yaw: 3.1416
+  # ultrasonic radar
+  ultrasonic_0:
+    x: 0.9
+    y: 0.25
+    z: 0.25
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  ultrasonic_1:
+    x: 0.9
+    y: -0.25
+    z: 0.25
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  ultrasonic_2:
+    x: 0.4
+    y: 0.55
+    z: 0.45
+    roll: 0.0
+    pitch: 0.0524
+    yaw: 1.5708
+  ultrasonic_3:
+    x: 0.4
+    y: -0.55
+    z: 0.45
+    roll: 0.0
+    pitch: 0.0524
+    yaw: -1.5708
+    
+  ultrasonic_4:
+    x: -0.15
+    y: 0.55
+    z: 0.45
+    roll: 0.0
+    pitch: 0.0524
+    yaw: 1.5708
+  ultrasonic_5:
+    x: -0.15
+    y: -0.55
+    z: 0.45
+    roll: 0.0
+    pitch: 0.0524
+    yaw: -1.5708
+  ultrasonic_6:
+    x: -0.9
+    y: 0.25
+    z: 0.25
+    roll: 0.0
+    pitch: 0.0
+    yaw: 3.1416
+  ultrasonic_7:
+    x: -0.9
+    y: -0.25
+    z: 0.25
+    roll: 0.0
+    pitch: 0.0
+    yaw: 3.1416
+  ultrasonic_8:
+    x: -0.15
+    y: 0.55
+    z: 0.45
+    roll: 0.0
+    pitch: 0.0524
+    yaw: 1.5708
+  ultrasonic_9:
+    x: -0.15
+    y: -0.55
+    z: 0.45
+    roll: 0.0
+    pitch: 0.0524
+    yaw: -1.5708
+  ultrasonic_10:
+    x: -0.9
+    y: 0.25
+    z: 0.25
+    roll: 0.0
+    pitch: 0.0
+    yaw: 3.1416
+  ultrasonic_11:
+    x: -0.9
+    y: -0.25
+    z: 0.25
+    roll: 0.0
+    pitch: 0.0
+    yaw: 3.1416
+
