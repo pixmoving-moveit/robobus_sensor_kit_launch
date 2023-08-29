@@ -1,4 +1,4 @@
-rs16:
+os_lidar_ancillary:
 # camera
   traffic_light_left_camera:
     x: 0.708
@@ -8,14 +8,21 @@ rs16:
     pitch: 0.063
     yaw: -1.584
   camera1:
-    x: 0.784 
-    y: 1.109
-    z: 1.450
+    x: 1.871
+    y: 0.540
+    z: 0.503
     roll: -1.549
-    pitch: 0.063
-    yaw: -1.592
-
+    pitch: 0.077
+    yaw: 1.568
+rs16:
 # lidar
+  os_lidar_ancillary:
+    x: 2.772 
+    y: 1.402
+    z: -1.005
+    roll: 0.003
+    pitch: 0.003
+    yaw: 3.087
 # robobus -- muti lidar
   os_lidar_fl:
     x: 1.178

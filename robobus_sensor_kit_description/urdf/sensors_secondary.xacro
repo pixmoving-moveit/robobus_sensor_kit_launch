@@ -4,7 +4,6 @@
   <xacro:property name="secondary_calibration" value="${xacro.load_yaml('$(arg config_dir)/sensors_secondary_calibration.yaml')}"/>
   <!-- sensor secondary link -->
   <link name="rs16" />
-  <link name="os_lidar_ancillary" />
 
   <link name="front_radar" />
   <link name="rear_radar" />
@@ -35,18 +34,6 @@
       rpy="${secondary_calibration['base_link']['rs16']['roll']} 
             ${secondary_calibration['base_link']['rs16']['pitch']} 
             ${secondary_calibration['base_link']['rs16']['yaw']}" />
-  </joint>
-
-  <joint name="os_lidar_ancillary_joint" type="fixed">
-    <parent link="base_link" />
-    <child link="os_lidar_ancillary" />
-    <origin 
-      xyz="${secondary_calibration['base_link']['os_lidar_ancillary']['x']} 
-            ${secondary_calibration['base_link']['os_lidar_ancillary']['y']} 
-            ${secondary_calibration['base_link']['os_lidar_ancillary']['z']}" 
-      rpy="${secondary_calibration['base_link']['os_lidar_ancillary']['roll']} 
-            ${secondary_calibration['base_link']['os_lidar_ancillary']['pitch']} 
-            ${secondary_calibration['base_link']['os_lidar_ancillary']['yaw']}" />
   </joint>
   <!-- millimeter wave -->
   <joint name="front_radar_joint" type="fixed">

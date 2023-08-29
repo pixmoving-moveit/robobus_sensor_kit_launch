@@ -6,14 +6,7 @@ base_link:
     z: 1.8
     roll: 0.0
     pitch: 0.0
-    yaw: 3.10
-  os_lidar_ancillary:
-    x: 4.161 
-    y: 0.177
-    z: 0.895
-    roll: 0.003
-    pitch: 0.004
-    yaw: 0.001
+    yaw: 3.14
   # millimeter wave
   front_radar:
     x: 1.2

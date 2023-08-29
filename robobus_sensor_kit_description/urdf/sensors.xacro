@@ -7,6 +7,7 @@
   <!-- sensor kit link -->
   <link name="traffic_light_left_camera" />
   <link name="camera1" />
+  <link name="os_lidar_ancillary" />
   <link name="os_lidar_fl" />
   <link name="os_lidar_fr" />
   <link name="os_lidar_rl" />
@@ -14,29 +15,40 @@
   <link name="gnss" />
 
   <!-- sensor kit joint -->
+  <joint name="os_lidar_ancillary_joint" type="fixed">
+    <parent link="rs16" />
+    <child link="os_lidar_ancillary" />
+    <origin 
+      xyz="${calibration['rs16']['os_lidar_ancillary']['x']} 
+            ${calibration['rs16']['os_lidar_ancillary']['y']} 
+            ${calibration['rs16']['os_lidar_ancillary']['z']}" 
+      rpy="${calibration['rs16']['os_lidar_ancillary']['roll']} 
+            ${calibration['rs16']['os_lidar_ancillary']['pitch']} 
+            ${calibration['rs16']['os_lidar_ancillary']['yaw']}" />
+  </joint>
   <!-- camera -->
   <joint name="camera1_joint" type="fixed">
-    <parent link="rs16" />
+    <parent link="os_lidar_ancillary" />
     <child link="camera1" />
     <origin 
-      xyz="${calibration['rs16']['camera1']['x']} 
-            ${calibration['rs16']['camera1']['y']} 
-            ${calibration['rs16']['camera1']['z']}" 
-      rpy="${calibration['rs16']['camera1']['roll']} 
-            ${calibration['rs16']['camera1']['pitch']} 
-            ${calibration['rs16']['camera1']['yaw']}" />
+      xyz="${calibration['os_lidar_ancillary']['camera1']['x']} 
+            ${calibration['os_lidar_ancillary']['camera1']['y']} 
+            ${calibration['os_lidar_ancillary']['camera1']['z']}" 
+      rpy="${calibration['os_lidar_ancillary']['camera1']['roll']} 
+            ${calibration['os_lidar_ancillary']['camera1']['pitch']} 
+            ${calibration['os_lidar_ancillary']['camera1']['yaw']}" />
   </joint>
 
   <joint name="traffic_light_left_camera_joint" type="fixed">
-    <parent link="rs16" />
+    <parent link="os_lidar_ancillary" />
     <child link="traffic_light_left_camera" />
     <origin 
-      xyz="${calibration['rs16']['traffic_light_left_camera']['x']} 
-            ${calibration['rs16']['traffic_light_left_camera']['y']} 
-            ${calibration['rs16']['traffic_light_left_camera']['z']}" 
-      rpy="${calibration['rs16']['traffic_light_left_camera']['roll']} 
-            ${calibration['rs16']['traffic_light_left_camera']['pitch']} 
-            ${calibration['rs16']['traffic_light_left_camera']['yaw']}" />
+      xyz="${calibration['os_lidar_ancillary']['traffic_light_left_camera']['x']} 
+            ${calibration['os_lidar_ancillary']['traffic_light_left_camera']['y']} 
+            ${calibration['os_lidar_ancillary']['traffic_light_left_camera']['z']}" 
+      rpy="${calibration['os_lidar_ancillary']['traffic_light_left_camera']['roll']} 
+            ${calibration['os_lidar_ancillary']['traffic_light_left_camera']['pitch']} 
+            ${calibration['os_lidar_ancillary']['traffic_light_left_camera']['yaw']}" />
   </joint>
 
   <!-- lidar  -->
