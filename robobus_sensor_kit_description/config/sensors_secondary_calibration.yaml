@@ -24,88 +24,89 @@ base_link:
     yaw: 3.1416
   # ultrasonic radar
   ultrasonic_0:
-    x: 0.9
-    y: 0.25
-    z: 0.25
+    x: 1.907
+    y: 0.36
+    z: 0.15
     roll: 0.0
     pitch: 0.0
-    yaw: 0.0
+    yaw: 0.2443
   ultrasonic_1:
-    x: 0.9
-    y: -0.25
-    z: 0.25
+    x: 1.907
+    y: 0.18
+    z: 0.15
     roll: 0.0
     pitch: 0.0
     yaw: 0.0
   ultrasonic_2:
-    x: 0.4
-    y: 0.55
-    z: 0.45
+    x: 1.907
+    y: -0.18
+    z: 0.15
     roll: 0.0
-    pitch: 0.0524
-    yaw: 1.5708
+    pitch: 0.0
+    yaw: 0.0
   ultrasonic_3:
-    x: 0.4
-    y: -0.55
-    z: 0.45
+    x: 1.907
+    y: -0.36
+    z: 0.15
     roll: 0.0
-    pitch: 0.0524
-    yaw: -1.5708
+    pitch: 0.0
+    yaw: -0.2443
     
   ultrasonic_4:
-    x: -0.15
-    y: 0.55
-    z: 0.45
+    x: 0.915
+    y: 0.9485
+    z: 0.15
     roll: 0.0
-    pitch: 0.0524
+    pitch: 0.0
     yaw: 1.5708
   ultrasonic_5:
-    x: -0.15
-    y: -0.55
-    z: 0.45
-    roll: 0.0
-    pitch: 0.0524
-    yaw: -1.5708
-  ultrasonic_6:
-    x: -0.9
-    y: 0.25
-    z: 0.25
+    x: -0.915
+    y: 0.9485
+    z: 0.15
     roll: 0.0
     pitch: 0.0
-    yaw: 3.1416
-  ultrasonic_7:
-    x: -0.9
-    y: -0.25
-    z: 0.25
-    roll: 0.0
-    pitch: 0.0
-    yaw: 3.1416
-  ultrasonic_8:
-    x: -0.15
-    y: 0.55
-    z: 0.45
-    roll: 0.0
-    pitch: 0.0524
     yaw: 1.5708
-  ultrasonic_9:
-    x: -0.15
-    y: -0.55
-    z: 0.45
+  ultrasonic_6:
+    x: 0.915
+    y: -0.9485
+    z: 0.15
     roll: 0.0
-    pitch: 0.0524
+    pitch: 0.0
     yaw: -1.5708
+  ultrasonic_7:
+    x: -0.915
+    y: -0.9485
+    z: 0.15
+    roll: 0.0
+    pitch: 0.0
+    yaw: -1.5708
+
+  ultrasonic_8:
+    x: -1.907
+    y: 0.36
+    z: 0.15
+    roll: 0.0
+    pitch: 0.0
+    yaw: 2.8973
+  ultrasonic_9:
+    x: -1.907
+    y: 0.18
+    z: 0.15
+    roll: 0.0
+    pitch: 0.0
+    yaw: 3.1416
   ultrasonic_10:
-    x: -0.9
-    y: 0.25
-    z: 0.25
+    x: -1.907
+    y: -0.18
+    z: 0.15
     roll: 0.0
     pitch: 0.0
-    yaw: 3.1416
+    yaw: -3.1416
   ultrasonic_11:
-    x: -0.9
-    y: -0.25
-    z: 0.25
+    x: -1.907
+    y: -0.36
+    z: 0.15
     roll: 0.0
     pitch: 0.0
-    yaw: 3.1416
+    yaw: -2.8973
 
