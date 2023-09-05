@@ -155,6 +155,8 @@ def launch_setup(context, *args, **kwargs):
                     "/sensing/lidar/rear_left/ouster/points_no_ground",
                     "/sensing/lidar/front_right/ouster/points_no_ground",
                     "/sensing/lidar/rear_right/ouster/points_no_ground",
+                    "/sensing/ultra_sonic_radar/front_rear/pointcloud",
+                    "/sensing/ultra_sonic_radar/left_right/pointcloud"
                 ],
                 "output_frame": LaunchConfiguration("base_frame"),
             }
