@@ -55,7 +55,7 @@ def generate_launch_description():
     params_path = os.path.join(
         usb_cam_dir,
         'config',
-        'params.yaml'
+        'camera_top.yaml'
     )
 
     node_name = args.node_name

@@ -5,8 +5,8 @@
   <xacro:include filename="sensors_secondary.xacro"/>
 
   <!-- sensor kit link -->
-  <link name="traffic_light_left_camera" />
-  <link name="camera1" />
+  <link name="camera_top" />
+  <link name="camera_front" />
   <link name="os_lidar_ancillary" />
   <link name="os_lidar_fl" />
   <link name="os_lidar_fr" />
@@ -27,28 +27,28 @@
             ${calibration['rs16']['os_lidar_ancillary']['yaw']}" />
   </joint>
   <!-- camera -->
-  <joint name="camera1_joint" type="fixed">
+  <joint name="camera_front_joint" type="fixed">
     <parent link="os_lidar_ancillary" />
-    <child link="camera1" />
+    <child link="camera_front" />
     <origin 
-      xyz="${calibration['os_lidar_ancillary']['camera1']['x']} 
-            ${calibration['os_lidar_ancillary']['camera1']['y']} 
-            ${calibration['os_lidar_ancillary']['camera1']['z']}" 
-      rpy="${calibration['os_lidar_ancillary']['camera1']['roll']} 
-            ${calibration['os_lidar_ancillary']['camera1']['pitch']} 
-            ${calibration['os_lidar_ancillary']['camera1']['yaw']}" />
+      xyz="${calibration['os_lidar_ancillary']['camera_front']['x']} 
+            ${calibration['os_lidar_ancillary']['camera_front']['y']} 
+            ${calibration['os_lidar_ancillary']['camera_front']['z']}" 
+      rpy="${calibration['os_lidar_ancillary']['camera_front']['roll']} 
+            ${calibration['os_lidar_ancillary']['camera_front']['pitch']} 
+            ${calibration['os_lidar_ancillary']['camera_front']['yaw']}" />
   </joint>
 
-  <joint name="traffic_light_left_camera_joint" type="fixed">
+  <joint name="camera_top_joint" type="fixed">
     <parent link="os_lidar_ancillary" />
-    <child link="traffic_light_left_camera" />
+    <child link="camera_top" />
     <origin 
-      xyz="${calibration['os_lidar_ancillary']['traffic_light_left_camera']['x']} 
-            ${calibration['os_lidar_ancillary']['traffic_light_left_camera']['y']} 
-            ${calibration['os_lidar_ancillary']['traffic_light_left_camera']['z']}" 
-      rpy="${calibration['os_lidar_ancillary']['traffic_light_left_camera']['roll']} 
-            ${calibration['os_lidar_ancillary']['traffic_light_left_camera']['pitch']} 
-            ${calibration['os_lidar_ancillary']['traffic_light_left_camera']['yaw']}" />
+      xyz="${calibration['os_lidar_ancillary']['camera_top']['x']} 
+            ${calibration['os_lidar_ancillary']['camera_top']['y']} 
+            ${calibration['os_lidar_ancillary']['camera_top']['z']}" 
+      rpy="${calibration['os_lidar_ancillary']['camera_top']['roll']} 
+            ${calibration['os_lidar_ancillary']['camera_top']['pitch']} 
+            ${calibration['os_lidar_ancillary']['camera_top']['yaw']}" />
   </joint>
 
   <!-- lidar  -->

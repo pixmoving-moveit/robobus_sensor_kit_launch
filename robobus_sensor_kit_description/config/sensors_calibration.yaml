@@ -1,13 +1,13 @@
 os_lidar_ancillary:
 # camera
-  traffic_light_left_camera:
+  camera_top:
     x: 0.708
     y: 1.053
     z: 1.479
     roll: -1.553
     pitch: 0.063
     yaw: -1.584
-  camera1:
+  camera_front:
     x: 1.871
     y: 0.540
     z: 0.503
