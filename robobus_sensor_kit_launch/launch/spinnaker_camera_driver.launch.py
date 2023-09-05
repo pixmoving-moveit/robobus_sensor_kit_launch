@@ -125,7 +125,15 @@ def launch_setup(context, *args, **kwargs):
                              'camerainfo_url': camerainfo_url
                              }
                             ],
-                remappings=[('~/control', '/exposure_control/control'), ])
+                remappings=[
+                    ('~/control', 'control'),
+                    ('~/meta', 'meta'),
+                    ('~/image_raw', 'image_raw'),
+                    ('~/camera_info', 'camera_info'),
+                    ('~/image_raw/compressed', 'image_raw/compressed'),
+                    ('~/image_raw/compressedDepth', 'image_raw/compressedDepth'),
+                    ('~/image_raw/theora', 'image_raw/theora'),
+                ])
 
     return [node]
 
