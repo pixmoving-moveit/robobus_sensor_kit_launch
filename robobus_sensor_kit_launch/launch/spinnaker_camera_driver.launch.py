@@ -112,7 +112,7 @@ def launch_setup(context, *args, **kwargs):
         [FindPackageShare('robobus_sensor_kit_launch'), 'config',
             camera_type + '.yaml'])
     
-    camerainfo_url = 'package://robobus_sensor_kit_launch/data/camera_info.yaml'
+    camerainfo_url = 'package://robobus_sensor_kit_launch/data/camera_top.yaml'
     
     node = Node(package='spinnaker_camera_driver',
                 executable='camera_driver_node',
