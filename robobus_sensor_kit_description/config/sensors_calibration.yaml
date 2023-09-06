@@ -14,7 +14,7 @@ os_lidar_ancillary:
     roll: -1.549
     pitch: 0.077
     yaw: 1.568
-rs16:
+sensor_top:
 # lidar
   os_lidar_ancillary:
     x: 2.772 

@@ -1,12 +1,12 @@
 base_link:
   # lidar
-  rs16:
+  sensor_top:
     x: 0.00
-    y: -0.000
+    y: 0.00
     z: 1.8
     roll: 0.0
     pitch: 0.0
-    yaw: 3.14
+    yaw: 0.0
   # millimeter wave
   front_radar:
     x: 1.2

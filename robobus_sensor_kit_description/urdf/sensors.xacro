@@ -16,15 +16,15 @@
 
   <!-- sensor kit joint -->
   <joint name="os_lidar_ancillary_joint" type="fixed">
-    <parent link="rs16" />
+    <parent link="sensor_top" />
     <child link="os_lidar_ancillary" />
     <origin 
-      xyz="${calibration['rs16']['os_lidar_ancillary']['x']} 
-            ${calibration['rs16']['os_lidar_ancillary']['y']} 
-            ${calibration['rs16']['os_lidar_ancillary']['z']}" 
-      rpy="${calibration['rs16']['os_lidar_ancillary']['roll']} 
-            ${calibration['rs16']['os_lidar_ancillary']['pitch']} 
-            ${calibration['rs16']['os_lidar_ancillary']['yaw']}" />
+      xyz="${calibration['sensor_top']['os_lidar_ancillary']['x']} 
+            ${calibration['sensor_top']['os_lidar_ancillary']['y']} 
+            ${calibration['sensor_top']['os_lidar_ancillary']['z']}" 
+      rpy="${calibration['sensor_top']['os_lidar_ancillary']['roll']} 
+            ${calibration['sensor_top']['os_lidar_ancillary']['pitch']} 
+            ${calibration['sensor_top']['os_lidar_ancillary']['yaw']}" />
   </joint>
   <!-- camera -->
   <joint name="camera_front_joint" type="fixed">
@@ -53,64 +53,64 @@
 
   <!-- lidar  -->
   <joint name="os_lidar_fl_joint" type="fixed">
-    <parent link="rs16" />
+    <parent link="sensor_top" />
     <child link="os_lidar_fl" />
     <origin 
-      xyz="${calibration['rs16']['os_lidar_fl']['x']} 
-            ${calibration['rs16']['os_lidar_fl']['y']} 
-            ${calibration['rs16']['os_lidar_fl']['z']}" 
-      rpy="${calibration['rs16']['os_lidar_fl']['roll']} 
-            ${calibration['rs16']['os_lidar_fl']['pitch']} 
-            ${calibration['rs16']['os_lidar_fl']['yaw']}" />
+      xyz="${calibration['sensor_top']['os_lidar_fl']['x']} 
+            ${calibration['sensor_top']['os_lidar_fl']['y']} 
+            ${calibration['sensor_top']['os_lidar_fl']['z']}" 
+      rpy="${calibration['sensor_top']['os_lidar_fl']['roll']} 
+            ${calibration['sensor_top']['os_lidar_fl']['pitch']} 
+            ${calibration['sensor_top']['os_lidar_fl']['yaw']}" />
   </joint>
 
   <joint name="os_lidar_fr_joint" type="fixed">
-    <parent link="rs16" />
+    <parent link="sensor_top" />
     <child link="os_lidar_fr" />
     <origin 
-      xyz="${calibration['rs16']['os_lidar_fr']['x']} 
-            ${calibration['rs16']['os_lidar_fr']['y']} 
-            ${calibration['rs16']['os_lidar_fr']['z']}" 
-      rpy="${calibration['rs16']['os_lidar_fr']['roll']} 
-            ${calibration['rs16']['os_lidar_fr']['pitch']} 
-            ${calibration['rs16']['os_lidar_fr']['yaw']}" />
+      xyz="${calibration['sensor_top']['os_lidar_fr']['x']} 
+            ${calibration['sensor_top']['os_lidar_fr']['y']} 
+            ${calibration['sensor_top']['os_lidar_fr']['z']}" 
+      rpy="${calibration['sensor_top']['os_lidar_fr']['roll']} 
+            ${calibration['sensor_top']['os_lidar_fr']['pitch']} 
+            ${calibration['sensor_top']['os_lidar_fr']['yaw']}" />
   </joint>
 
    <joint name="os_lidar_rl_joint" type="fixed">
-    <parent link="rs16" />
+    <parent link="sensor_top" />
     <child link="os_lidar_rl" />
     <origin 
-      xyz="${calibration['rs16']['os_lidar_rl']['x']} 
-            ${calibration['rs16']['os_lidar_rl']['y']} 
-            ${calibration['rs16']['os_lidar_rl']['z']}" 
-      rpy="${calibration['rs16']['os_lidar_rl']['roll']} 
-            ${calibration['rs16']['os_lidar_rl']['pitch']} 
-            ${calibration['rs16']['os_lidar_rl']['yaw']}" />
+      xyz="${calibration['sensor_top']['os_lidar_rl']['x']} 
+            ${calibration['sensor_top']['os_lidar_rl']['y']} 
+            ${calibration['sensor_top']['os_lidar_rl']['z']}" 
+      rpy="${calibration['sensor_top']['os_lidar_rl']['roll']} 
+            ${calibration['sensor_top']['os_lidar_rl']['pitch']} 
+            ${calibration['sensor_top']['os_lidar_rl']['yaw']}" />
   </joint>
 
    <joint name="os_lidar_rr_joint" type="fixed">
-    <parent link="rs16" />
+    <parent link="sensor_top" />
     <child link="os_lidar_rr" />
     <origin 
-      xyz="${calibration['rs16']['os_lidar_rr']['x']} 
-            ${calibration['rs16']['os_lidar_rr']['y']} 
-            ${calibration['rs16']['os_lidar_rr']['z']}" 
-      rpy="${calibration['rs16']['os_lidar_rr']['roll']} 
-            ${calibration['rs16']['os_lidar_rr']['pitch']} 
-            ${calibration['rs16']['os_lidar_rr']['yaw']}" />
+      xyz="${calibration['sensor_top']['os_lidar_rr']['x']} 
+            ${calibration['sensor_top']['os_lidar_rr']['y']} 
+            ${calibration['sensor_top']['os_lidar_rr']['z']}" 
+      rpy="${calibration['sensor_top']['os_lidar_rr']['roll']} 
+            ${calibration['sensor_top']['os_lidar_rr']['pitch']} 
+            ${calibration['sensor_top']['os_lidar_rr']['yaw']}" />
   </joint>
 
 <!-- combined navigation -->
   <joint name="gnss_joint" type="fixed">
-    <parent link="rs16" />
+    <parent link="sensor_top" />
     <child link="gnss" />
     <origin 
-      xyz="${calibration['rs16']['gnss']['x']} 
-            ${calibration['rs16']['gnss']['y']} 
-            ${calibration['rs16']['gnss']['z']}" 
-      rpy="${calibration['rs16']['gnss']['roll']} 
-            ${calibration['rs16']['gnss']['pitch']} 
-            ${calibration['rs16']['gnss']['yaw']}" />
+      xyz="${calibration['sensor_top']['gnss']['x']} 
+            ${calibration['sensor_top']['gnss']['y']} 
+            ${calibration['sensor_top']['gnss']['z']}" 
+      rpy="${calibration['sensor_top']['gnss']['roll']} 
+            ${calibration['sensor_top']['gnss']['pitch']} 
+            ${calibration['sensor_top']['gnss']['yaw']}" />
   </joint>
 
 </robot>

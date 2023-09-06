@@ -3,7 +3,7 @@
   <xacro:arg name="config_dir" default="$(find robobus_sensor_kit_description)/config"/>
   <xacro:property name="secondary_calibration" value="${xacro.load_yaml('$(arg config_dir)/sensors_secondary_calibration.yaml')}"/>
   <!-- sensor secondary link -->
-  <link name="rs16" />
+  <link name="sensor_top" />
 
   <link name="front_radar" />
   <link name="rear_radar" />
@@ -24,16 +24,16 @@
 
   <!-- sensor kit joint -->
   <!-- lidar -->
-  <joint name="rs16_joint" type="fixed">
+  <joint name="sensor_top_joint" type="fixed">
     <parent link="base_link" />
-    <child link="rs16" />
+    <child link="sensor_top" />
     <origin 
-      xyz="${secondary_calibration['base_link']['rs16']['x']} 
-            ${secondary_calibration['base_link']['rs16']['y']} 
-            ${secondary_calibration['base_link']['rs16']['z']}" 
-      rpy="${secondary_calibration['base_link']['rs16']['roll']} 
-            ${secondary_calibration['base_link']['rs16']['pitch']} 
-            ${secondary_calibration['base_link']['rs16']['yaw']}" />
+      xyz="${secondary_calibration['base_link']['sensor_top']['x']} 
+            ${secondary_calibration['base_link']['sensor_top']['y']} 
+            ${secondary_calibration['base_link']['sensor_top']['z']}" 
+      rpy="${secondary_calibration['base_link']['sensor_top']['roll']} 
+            ${secondary_calibration['base_link']['sensor_top']['pitch']} 
+            ${secondary_calibration['base_link']['sensor_top']['yaw']}" />
   </joint>
   <!-- millimeter wave -->
   <joint name="front_radar_joint" type="fixed">
